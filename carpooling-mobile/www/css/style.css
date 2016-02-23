@@ -735,3 +735,14 @@ h5 {
 .autocomplete-suggestions {
   background-color: #fff !important;
 }
+
+/* ACCESSIBILITY FIX */
+
+.acc_nav_b{
+    background-color: #3448A5;
+    border: none;
+    color: #FFFFFF;
+}
+.acc_nav_b i{
+    font-size: 2.5em;
+}

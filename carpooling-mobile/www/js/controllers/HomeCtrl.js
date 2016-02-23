@@ -160,6 +160,16 @@ angular.module('carpooling.controllers.home', [])
         });
     };
 
+    $scope.goToNotifications = function () {
+        $state.go('app.notifiche');
+    };
+    $scope.goToOffri = function () {
+        $state.go('app.offri');
+    };
+    $scope.goToCerca = function () {
+        $state.go('app.cerca');
+    };
+
     /*
      * Offro
      */
