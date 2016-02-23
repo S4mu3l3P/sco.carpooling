@@ -6,13 +6,15 @@
                 <div class="item item-input item-autocomplete" ng-class="{'item-autocomplete-ok': equalFormAndTravelRequestFields['from']}">
                     <placeautocomplete ng-model="formTravelRequest['from'].name" placeholder="{{'lbl_from' | translate}}" attr-placeholder="{{'lbl_from' | translate}}" click-activation="true" data="places.names" on-type="typingFrom" on-select="setLocationFrom"></placeautocomplete>
                     <!----------------->
-                    <a class="button button-icon icon ion-map padding-left" ng-click="showModalMap('from')"></a>
+                    <!--<a class="button button-icon icon ion-map padding-left" ng-click="showModalMap('from')"></a>-->
+                    <button class="button button-icon icon ion-map padding-left" title="mappa {{'lbl_from' | translate}}" ng-click="showModalMap('from')"></button>
                 </div>
                 <!--AUTOCOMPLETE-->
                 <div class="item item-input item-autocomplete" ng-class="{'item-autocomplete-ok': equalFormAndTravelRequestFields['to']}">
                     <placeautocomplete ng-model="formTravelRequest['to'].name" placeholder="{{'lbl_to' | translate}}" attr-placeholder="{{'lbl_to' | translate}}" click-activation="true" data="places.names" on-type="typingTo" on-select="setLocationTo"></placeautocomplete>
                     <!----------------->
-                    <a class="button button-icon icon ion-map padding-left" ng-click="showModalMap('to')"></a>
+                    <!--<a class="button button-icon icon ion-map padding-left" ng-click="showModalMap('to')"></a>-->
+                    <button class="button button-icon icon ion-map padding-left" title="mappa {{'lbl_to' | translate}}" ng-click="showModalMap('to')"></button>
                 </div>
                 <div class="item item-input">
                     <span class="input-label">{{'lbl_date' | translate}}</span>
