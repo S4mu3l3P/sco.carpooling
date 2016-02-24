@@ -26,7 +26,8 @@ angular.module('carpooling', [
     'carpooling.controllers.user',
     'carpooling.controllers.communities',
     'carpooling.controllers.communityinfo',
-    'leaflet-directive'
+    'leaflet-directive',
+    'ngAria'
 ])
 
 .run(function ($ionicPlatform, $rootScope, $state, $ionicHistory, $q, StorageSrv, LoginSrv, UserSrv, Config, Utils) {

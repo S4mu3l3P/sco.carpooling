@@ -163,11 +163,12 @@ angular.module('carpooling.controllers.home', [])
     $scope.goToNotifications = function () {
         $state.go('app.notifiche');
     };
-    $scope.goToOffri = function () {
-        $state.go('app.offri');
-    };
-    $scope.goToCerca = function () {
-        $state.go('app.cerca');
+    $scope.goToCercaOffri = function () {
+        if ($scope.tab === 0) {
+            $state.go('app.cerca');
+        } else {
+            $state.go('app.offri');
+        }
     };
 
     /*

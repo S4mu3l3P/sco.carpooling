@@ -26,6 +26,7 @@
         "/Users/raman/workspace/sco.carpooling/carpooling-mobile/www/js/services/StorageSrv.js",
         "/Users/raman/workspace/sco.carpooling/carpooling-mobile/www/js/controllers/HomeCtrl.js",
         "/Users/raman/workspace/sco.carpooling/carpooling-mobile/www/js/services/GeoSrv.js",
-        "/Users/raman/workspace/sco.carpooling/carpooling-mobile/www/js/controllers/ViaggioCtrl.js"
+        "/Users/raman/workspace/sco.carpooling/carpooling-mobile/www/js/controllers/ViaggioCtrl.js",
+        "/home/linuxuser/accessibility/sco.carpooling/carpooling-mobile/platforms/android/cordova/lib/spawn.js"
     ]
 }
