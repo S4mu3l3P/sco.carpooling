@@ -1,7 +1,11 @@
 <ion-view title="{{'app_name' | translate}}">
     <ion-nav-buttons side="right">
-        <a href="#/app/notifiche" class="button button-icon ion-android-notifications"></a>
-        <a ng-href="{{tab == 0 ? '#/app/cerca' : '#/app/offri'}}" ng-class="tab == 0 ? 'ion-android-search' : 'ion-android-add' " class="button button-icon padding-left"></a>
+        <!--<button title="notifiche" ng-click="goToNotifications()" class="acc_nav_b"><i class="icons ion-android-notifications"></i></button>-->
+        <button class="button button-icon button-clear ion-android-notifications" title="notifiche" ng-click="goToNotifications()"></button>
+        <!--<a href="#/app/notifiche" class="button button-icon ion-android-notifications" title="notifiche"></a>-->
+        <button class="{{tab == 0 ? 'button button-icon button-clear ion-android-search' : 'button button-icon button-clear ion-android-add'}}" title="{{tab == 0 ? 'cerca viaggio' : 'offri viaggio'}}" ng-click="{{tab == 0 ? 'goToCerca()' : 'goToOffri()'}}"></button>
+        <!--<button title="{{tab == 0 ? 'cerca viaggio' : 'offri viaggio'}}" ng-click="{{tab == 0 ? 'goToOffri()' : 'goToCerca()'}}" class="acc_nav_b"><i class="{{tab == 0 ? 'icons ion-android-search' : 'icons ion-android-add'}}"></i></button>-->
+        <!--<a ng-href="{{tab == 0 ? '#/app/cerca' : '#/app/offri'}}" ng-class="tab == 0 ? 'ion-android-search' : 'ion-android-add' " class="button button-icon padding-left"></a>-->
     </ion-nav-buttons>
 
     <ion-tabs class="tabs-top">

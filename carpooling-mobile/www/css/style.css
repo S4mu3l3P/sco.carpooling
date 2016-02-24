@@ -445,6 +445,34 @@ placeautocomplete ul li {
 .btn button {
     width: 100%;
 }
+.day-change{
+    text-align: center;
+}
+.day-change h5{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: super;
+    font-size: 1.2em;
+}
+.day-change .button-day{
+    font-size: 2.5em;
+    display: inline-block;
+    color: #3f51b5;
+    border: none;
+    background-color: #FFFFFF;
+}
+.day-change .button-day.b_left{
+    float: left;
+    margin-left: 0.2em;
+}
+.day-change .button-day.b_right{
+    float: right;
+    margin-right: 0.2em;
+}
+.day-change .button-day:disabled{
+    color: #888888;
+}
 
 /* USERINFO  */
 
@@ -707,3 +735,14 @@ h5 {
 .autocomplete-suggestions {
   background-color: #fff !important;
 }
+
+/* ACCESSIBILITY FIX */
+
+/*.acc_nav_b{
+    background-color: #3448A5;
+    border: none;
+    color: #FFFFFF;
+}
+.acc_nav_b i{
+    font-size: 2.5em;
+}*/

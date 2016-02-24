@@ -1,6 +1,6 @@
 angular.module('carpooling.controllers.communityinfo', [])
 
-.controller('CommunityInfoCtrl', function ($scope, $rootScope, $state, $stateParams, $ionicTabsDelegate, UserSrv, Utils, StorageSrv) {
+.controller('CommunityInfoCtrl', function ($scope, $rootScope, $state, $stateParams, $ionicTabsDelegate, UserSrv, Utils, StorageSrv, $filter) {
     $scope.tab = 0;
 
     $scope.selectTab = function (idx) {
@@ -18,15 +18,51 @@ angular.module('carpooling.controllers.communityinfo', [])
     $scope.communityStyle = null;
     $scope.community = {};
     $scope.travelTimeFormat = 'HH:mm';
-
+    $scope.selectDate = Date.now();
     $scope.hasAuto = !!StorageSrv.getUser().auto;
+    $scope.lbl_day = $filter('translate')('lbl_todaytrips');
+    var start = new Date();
+    var end = new Date();
+    /*Get the start and the end of the current day in milliseconds*/
+    var toTimestamp = function () {
+        start.setHours(0, 0, 0, 0);
+        end.setHours(23, 59, 59, 999);
+        start = start.getTime();
+        end = end.getTime();
+    }
+    toTimestamp();
 
+    $scope.changeDay = function (num) {
+        if (num === 0) {
+            $scope.selectDate -= 24 * 60 * 60 * 1000;
+        } else {
+            $scope.selectDate += 24 * 60 * 60 * 1000;
+        }
+        compareDate();
+        init();
+    };
+    /* Check if the selected date is Today  */
+    var compareDate = function () {
+        if ($scope.selectDate >= start && $scope.selectDate <= end) {
+            $scope.lbl_day = $filter('translate')('lbl_todaytrips');
+        } else {
+            $scope.lbl_day = $filter('date')($scope.selectDate, 'EEEE dd/MM/yyyy');
+        }
+    };
+
+    $scope.hideYesterday = function () {
+        if ($scope.selectDate <= Date.now()) {
+            return true;
+        } else {
+            return false;
+        }
+    };
     var init = function () {
         Utils.loading();
         UserSrv.getCommunityDetails($stateParams.community.id).then(
             function (community) {
                 $scope.community = community;
-                UserSrv.getCommunityTravels($scope.community.id, Date.now()).then(
+                UserSrv.getCommunityTravels($scope.community.id, $scope.selectDate).then(
                     function (todayCommunityTrips) {
                         $scope.communityTrips = todayCommunityTrips;
                         $scope.communityTrips.forEach(function (trip) {

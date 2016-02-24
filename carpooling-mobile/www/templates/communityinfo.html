@@ -11,7 +11,11 @@
                     <button class="button button-block button-carpooling" ng-click="addTrip()">
                         {{'lbl_addtrip' | translate | uppercase}}
                     </button>
-                    <h5>{{'lbl_todaytrips'| translate | uppercase}}</h5>
+                    <div class="day-change">
+                        <button class="ion-arrow-left-b button-day b_left" ng-click="changeDay(0)" ng-disabled="hideYesterday()"></button>
+                        <h5>{{lbl_day}}</h5>
+                        <button class="ion-arrow-right-b button-day b_right" ng-click="changeDay(1)"></button>
+                    </div>
                     <div ng-if="!!communityTrips && communityTrips.length == 0">
                         <h4>{{'lbl_no_results' | translate}}</h4>
                     </div>
