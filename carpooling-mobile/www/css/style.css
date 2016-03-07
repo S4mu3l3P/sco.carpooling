@@ -60,7 +60,7 @@
 .carpooling-theme .tabs .tab-item.tab-item-active,
 .carpooling-theme .tabs .tab-item.active,
 .carpooling-theme .tabs .tab-item.activated {
-    color: #4EB0E6;
+    color: #75ffff;
     border: 0 solid #4EB0E6;
 }
 .carpooling-theme .tabs-top.tabs-striped .tabs {
@@ -265,7 +265,7 @@ placeautocomplete ul li {
     color: #000000;
 }
 .card.card-trip .trip-data .trip-data-requested {
-    color: #4EB0E6;
+    color: #095597;
 }
 .card.card-trip .trip-data .trip-data-rejected {
     color: #FF0000;

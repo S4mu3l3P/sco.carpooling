@@ -9,7 +9,7 @@
     </ion-nav-buttons>
 
     <ion-tabs class="tabs-top">
-        <ion-tab title="{{'tab_participate' | translate}}" ng-click="selectTab(0)">
+        <ion-tab title="{{'tab_participate' | translate}}" ng-click="selectTab(0)" aria-hidden="true">
             <ion-view>
                 <ion-content>
                     <div class="padding" ng-if="nonConfirmedTrips != null && nonConfirmedTrips.length == 0 && passengerTrips != null && passengerTrips.length == 0" style="color: gray">
@@ -108,7 +108,7 @@
             </ion-view>
         </ion-tab>
 
-        <ion-tab title="{{'tab_offer' | translate}}" ng-click="selectTab(1)">
+        <ion-tab title="{{'tab_offer' | translate}}" ng-click="selectTab(1)" aria-hidden="true">
             <ion-view>
                 <ion-content ng-init="loadMoreDriverTrips()">
                     <div class="padding" ng-if="driverTrips != null && driverTrips.length == 0" style="color: gray">
